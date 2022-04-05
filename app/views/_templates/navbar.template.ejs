@@ -1,0 +1,36 @@
+<!-- Navbar-->
+<header class="app-header">
+   <a class="app-header__logo" href="/">
+      <%= appname %>
+         <p class="app-header__subtitle">
+            <%= subtitle %>
+         </p>
+   </a>
+   <!-- Sidebar toggle button-->
+   <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+   <!-- Navbar Right Menu-->
+<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+   <ul class="app-nav" id="navbarSupportedContent">
+      <li class="app-search">
+         <button class="btn btn-info" id="start-session">
+            <i class="fas fa-sign-in-alt"></i>
+            Iniciar Sesi&oacute;n
+         </button>
+         <select class="app-search__input" id="user-status">
+         </select>
+      </li>
+      <li class="app-search">
+         <i class="text-white" id="app-timer">00:00:00</i>
+      </li>
+
+      <!-- User Menu-->
+      <li class="app-search">
+         <button id="sign-out" class="btn btn-warning" aria-label="Salir">
+            Salir
+            <i class="fas fa-sign-out-alt fa-lg"></i>
+         </button>
+      </li>
+   </ul>
+</header>

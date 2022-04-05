@@ -1,0 +1,36 @@
+<%- include('../_templates/header.template.ejs') %>
+   <%- include('../_templates/navbar.template.ejs') %>
+      <%- include('../_templates/sidebar.template.ejs') %>
+         <%- include('../_templates/body_top.template.ejs') %>
+            <div class="app-title">
+               <div>
+                  <h1><i class="fa fa-dashboard"></i> Tablero</h1>
+                  <p>Resumen gr&aacute;fico </p>
+               </div>
+               <ul class="app-breadcrumb breadcrumb">
+                  <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+               </ul>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="tile">
+                     <h3 class="tile-title">Contactos por hora</h3>
+                     <div class="embed-responsive embed-responsive-16by9">
+                        <canvas class="embed-responsive-item" id="lineChartDemo" width="476" height="267"
+                           style="width: 476px; height: 267px;"></canvas>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="tile">
+                     <h3 class="tile-title">Contactos por Tipo </h3>
+                     <div class="embed-responsive embed-responsive-16by9">
+                        <canvas class="embed-responsive-item" id="lineChartDemo" width="476" height="267"
+                           style="width: 476px; height: 267px;"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%- include('../_templates/body_bottom.template.ejs') %>
+               <%- include('../_templates/footer.template.ejs') %>

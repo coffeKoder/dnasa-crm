@@ -1,0 +1,65 @@
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+   <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/avatar/<%= usr[0].avatar %>"
+         alt="User Image">
+      <div>
+         <a href="/usuarios/perfil" class="app-sidebar__user-container">
+            <p class="app-sidebar__user-name">
+               <%= usr[0].usuario %>
+            </p>
+            <p class="app-sidebar__user-designation">
+               <%= usr[0].apellidop %>, <%= usr[0].nombres %>
+            </p>
+         </a>
+      </div>
+   </div>
+   <ul class="app-menu">
+
+      <li><a class="app-menu__item" href="/">
+            <i class="app-menu__icon fa fa-dashboard"></i>
+            <span class="app-menu__label">Dashboard</span>
+         </a>
+      </li>
+
+      <li><a class="app-menu__item" href="/gestion">
+            <i class="app-menu__icon fas fa-edit"></i>
+            <span class="app-menu__label">Sistema de Registros</span>
+         </a>
+      </li>
+   
+      <% if (usr[0].perfil_id !=12) { %>
+         <li><a class="app-menu__item" href="/monitoreo">
+               <i class="app-menu__icon fas fa-stopwatch-20"></i>
+               <span class="app-menu__label">Monitoreo</span>
+            </a>
+         </li>
+         <% } %>
+
+      <!-- <li><a class="app-menu__item" href="/reportes">
+            <i class="app-menu__icon fas fa-chart-line"></i>
+            <span class="app-menu__label">Reportes</span>
+         </a>
+      </li>
+
+      <li><a class="app-menu__item" href="/horarios">
+            <i class="app-menu__icon fas fa-calendar-alt"></i>
+            <span class="app-menu__label">Horarios</span>
+         </a>
+      </li>
+
+      <li><a class="app-menu__item" href="/ajustes">
+            <i class="app-menu__icon fas fa-cogs"></i>
+            <span class="app-menu__label">Ajustes</span>
+         </a>
+      </li>
+
+      <li><a class="app-menu__item" href="/usuarios">
+            <i class="app-menu__icon fas fa-user-cog"></i>
+            <span class="app-menu__label">Usuarios</span>
+         </a>
+      </li> -->
+
+
+   </ul>
+</aside>

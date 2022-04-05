@@ -1,0 +1,16 @@
+<%- include('../_templates/header.template.ejs') %>
+
+   
+            <div class="page-error tile">
+               <h1><i class="fa fa-exclamation-circle"></i>
+                  <%= message %>
+               </h1>
+               <p>
+                  <%= error.status %>
+               </p>
+               <pre><%= error %></pre>
+               <p><a class="btn btn-primary" href="javascript:window.history.back();">Go Back</a></p>
+            </div>
+
+            <%- include('../_templates/body_bottom.template.ejs') %>
+               <%- include('../_templates/footer.template.ejs') %>

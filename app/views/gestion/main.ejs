@@ -1,0 +1,193 @@
+<%- include('../_templates/header.template.ejs') %>
+   <%- include('../_templates/navbar.template.ejs') %>
+      <%- include('../_templates/sidebar.template.ejs') %>
+         <%- include('../_templates/body_top.template.ejs') %>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="tile">
+                     <div class="tile-title-w-btn">
+                        <h3 class="title">Registro de Contactos</h3>
+                        <div class="btn-group">
+                           <a class="btn btn-primary" href="#" id="new-register">
+                              <i class="fa fa-lg fa-plus"></i>
+                              Nuevo Registro
+                           </a>
+                        </div>
+                     </div>
+                     <div class="tile-body">
+                        <form method="post" action="api/crm/create">
+                           <div class="row">
+                              <div class="col-md-4 form-group">
+                                 <label for="tipo_contacto">Tipo de Contacto</label>
+                                 <select class="form-control" id="tipo_contacto" name="tipo_contacto" required="true" disabled></select>
+                              </div>
+                              <div class="col-md-4 form-group">
+                                 <label for="tipo_consulta">Tipo de Consulta</label>
+                                 <select class="form-control" id="tipo_consulta" name="tipo_consulta" required="true" disabled></select>
+                              </div>
+                              <div class="col-md-4 form-group">
+                                 <label for="">N&uacute;mero de Tel&eacute;fono</label>
+                                 <input type="text" class="form-control" id="telefono" , name="telefono" disabled
+                                    placeholder="Telefono / Email / Usuario / Telegram" required="true" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-4 form-group">
+                                 <label for="">Comentarios</label>
+                                 <textarea class="form-control" id="comentario" name="comentario" required="true" disabled></textarea>
+                              </div>
+                              <div class="col-md-4">
+                                 <input type="hidden" id="inicio_dt" name="inicio_dt" />
+                              </div>
+                              <div class="col-md-4 form-group">
+                                 <br />
+                                 <button class="btn btn-primary btn-block" id="enviar" disabled>
+                                    Registrar
+                                 </button>
+                              </div>
+                           </div>
+
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="tile">
+                     <h3 class="tile-title">Datos registrados
+                     </h3>
+                     <table class="table table-responsive-sm table-hover table-sm table-bordered dataTable no-footer" id="tbl_registros"
+                        role="grid">
+                        <thead>
+                           <tr>
+                              <th>Registro</th>
+                              <th>Usuario</th>
+                              <th>Tipo de Contacto</th>
+                              <th>Tipo de Consulta</th>
+                              <th>Tel&eacute;fono</th>
+                              <th>Acciones</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <% if (rst.length> 0) { %>
+                              <% for( let i=0; i < rst.length; i++ ) { %>
+                                 <tr>
+                                    <td>
+                                       <%= rst[i].inicio_dt.getHours() < 10 ? '0' + rst[i].inicio_dt.getHours() :
+                                          rst[i].inicio_dt.getHours() %>
+                                          :<%= rst[i].inicio_dt.getMinutes() < 10 ? '0' + rst[i].inicio_dt.getMinutes()
+                                             : rst[i].inicio_dt.getMinutes() %>
+                                             :<%= rst[i].inicio_dt.getSeconds() < 10 ? '0' +
+                                                rst[i].inicio_dt.getSeconds() : rst[i].inicio_dt.getSeconds() %>
+                                    </td>
+                                    <td>
+                                       <%= rst[i].usuario %>
+                                    </td>
+                                    <td>
+                                       <%= rst[i].tipo_contacto %>
+                                    </td>
+                                    <td>
+                                       <%= rst[i].tipo_consulta %>
+                                    </td>
+                                    <td>
+                                       <%= rst[i].telefono %>
+                                    </td>
+                                    <td>
+                                       <button value="<%= rst[i].id %>" class="btn btn-info btn-sm btn-detalle"
+                                          data-toggle="modal" data-target="#detailModal">Detalle</button>
+                                    </td>
+                                 </tr>
+                                 <% } %>
+                                    <% } %>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+
+
+            <%- include('../_templates/body_bottom.template.ejs') %>
+               <script src="/ajax/registros.ajax.js"></script>
+               <%- include('../_templates/footer.template.ejs') %>
+
+                  <div class="bs-component">
+                     <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModal"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h5 class="modal-title">Detalles del registro</h5>
+                                 <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
+                                       aria-hidden="true">×</span></button>
+                              </div>
+                              <div class="modal-body">
+                                 <!-- Usuario -->
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label for="">Nombre de Usuario</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <p class="font-weight-bold" id="modalUsuario"></p>
+                                    </div>
+                                 </div>
+
+                                 <!-- Hora de inicio -->
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label for="">Hora de creacion</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <p class="font-weight-bold" id="modalHora"></p>
+                                    </div>
+                                 </div>
+
+                                 <!-- Tipo de contacto -->
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label for="">Tipo de Contacto</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <p class="font-weight-bold" id="modalTcontacto"></p>
+                                    </div>
+                                 </div>
+
+                                 <!-- Tipo de Consulta -->
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label for="">Tipo de Consulta</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <p class="font-weight-bold" id="modalTconsulta"></p>
+                                    </div>
+                                 </div>
+
+                                 <!-- Origen del contacto -->
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label for="">Origen del Contacto</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <p class="font-weight-bold" id="modalTelefono"></p>
+                                    </div>
+                                 </div>
+
+                                 <!-- Comentario -->
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label for="">Comentario</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <p class="font-weight-bold" id="modalComentario"></p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="modal-footer">
+                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar
+                                    detalle</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>

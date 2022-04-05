@@ -1,0 +1,60 @@
+<!-- App Content -->
+<main class="app-content">
+
+<% if (success.length> 0) { %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+      	$.notify({
+      		title: "Proceso Completado : ",
+      		message: "<%= success %>",
+      		icon: 'fa fa-check' 
+      	},{
+      		type: "success"
+      	});
+});
+      
+</script>
+<% } %>
+
+      <% if (danger.length> 0) { %>
+         <div class="bs-component">
+            <script type="text/javascript">
+      $(document).ready(function () {
+         $.notify({
+            title: 'Error!',
+            messages: '<%= danger %>',
+            icon: 'fas fa-times'
+         }, {
+            type: 'danger'
+         })
+      })
+   </script>
+         <% } %>
+
+            <% if (warning.length> 0) { %>
+               <script type="text/javascript">
+      $(document).ready(function () {
+         $.notify({
+            title: 'Cuidado!',
+            messages: '<%= warning %>',
+            icon: 'fas fa-exclamation-trinagle'
+         }, {
+            type: 'warning'
+         })
+      })
+   </script>
+               <% } %>
+
+                  <% if (info.length> 0) { %>
+                     <script type="text/javascript">
+      $(document).ready(function () {
+         $.notify({
+            title: 'Inrormación!',
+            messages: '<%= info %>',
+            icon: 'fas fa-comments-dot'
+         }, {
+            type: 'info'
+         })
+      })
+   </script>
+                     <% } %>

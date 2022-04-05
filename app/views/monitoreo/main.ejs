@@ -1,0 +1,124 @@
+<%- include('../_templates/header.template.ejs') %>
+   <%- include('../_templates/navbar.template.ejs') %>
+      <%- include('../_templates/sidebar.template.ejs') %>
+         <%- include('../_templates/body_top.template.ejs') %>
+
+            <div class="row">
+               <div class="col-md-6 col-lg-3">
+                  <div class="widget-small info coloured-icon">
+                     <i class="icon fas fa-phone-volume fa-3x"></i>
+                     <div class="info">
+                        <h4>Llamadas Registradas</h4>
+                        <p><b id="llamadas"></b></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 col-lg-3">
+                  <div class="widget-small primary coloured-icon">
+                     <i class="icon fa fa-user-check fa-3x"></i>
+                     <div class="info">
+                        <h4>Operadores Conectados</h4>
+                        <p><b id="connected"></b></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 col-lg-3">
+                  <div class="widget-small warning coloured-icon">
+                     <i class="icon fas fa-user-times fa-3x"></i>
+                     <div class="info">
+                        <h4>No Disponibles</h4>
+                        <p><b id="not-ready"></b></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 col-lg-3">
+                  <div class="widget-small danger coloured-icon">
+                     <i class="icon fas fa-user-slash fa-3x"></i>
+                     <div class="info">
+                        <h4>No Conectados</h4>
+                        <p><b>---</b></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="tile">
+                     <div class="tile-title-w-btn">
+                        <h3 class="title">Monitoreo</h3>
+                        <p>
+                           <select name="jefe_id" id="jefe_id" class="form-control form-control-sm">
+
+                           </select>
+                        </p>
+                     </div>
+                     <div class="tile-body table-responsive">
+                        <table id="tbl-realtime" class="table table-hover table-sm">
+                           <thead>
+                              <th>Usuario</th>
+                              <th>Coordinador</th>
+                              <th>Actividad</th>
+                              <th>Tiempo</th>
+                           </thead>
+                           <tbody id="rtl_table">
+
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="tile">
+                     <div class="tile-title-w-btn">
+                        <h3 class="title">Cuartos</h3>
+                        <p>
+                           <select name="" id="" class="form-control form-control-sm">
+                              <option value="">Tipo de Contacto</option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                           </select>
+                        </p>
+                     </div>
+                     <div class="tile-body">
+
+                     </div>
+                  </div>
+
+                  <div class="tile">
+                     <div class="tile-title-w-btn">
+                        <h3 class="title">Servicio</h3>
+                        <p>
+                           <select name="" id="" class="form-control form-control-sm">
+                              <option value="">Servicios</option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                           </select>
+                        </p>
+                     </div>
+                     <div class="tile-body">
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+           
+            <script src="/ajax/monitoreo.ajax.js"></script>
+
+            <%- include('../_templates/body_bottom.template.ejs') %>
+               <%- include('../_templates/footer.template.ejs') %>

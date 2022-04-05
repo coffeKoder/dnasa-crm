@@ -1,0 +1,47 @@
+<% if (success.length> 0) { %>
+   <div class="bs-component">
+      <div class="alert alert-dismissible fade show alert-success">
+         <button class="close" type="button" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+         </button>
+         <strong>Correcto!</strong>
+         <%= success %>
+      </div>
+   </div>
+   <% } %>
+
+      <% if (danger.length> 0) { %>
+         <div class="bs-component">
+            <div class="alert alert-dismissible fade show alert-danger">
+               <button class="close" type="button" data-dismiss="alert">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+               <strong>Error!</strong>
+               <%= danger %>
+            </div>
+         </div>
+         <% } %>
+
+            <% if (warning.length> 0) { %>
+               <div class="bs-component">
+                  <div class="alert alert-dismissible fade show alert-warning">
+                     <button class="close" type="button" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                     <strong>Cuidado!</strong>
+                     <%= warning %>
+                  </div>
+               </div>
+               <% } %>
+
+                  <% if (info.length> 0) { %>
+                     <div class="bs-component">
+                        <div class="alert alert-dismissible fade show alert-info">
+                           <button class="close" type="button" data-dismiss="alert">
+                              <span aria-hidden="true">&times;</span>
+                           </button>
+                           <strong>Informaci&oacute;n!</strong>
+                           <%= info %>
+                        </div>
+                     </div>
+                     <% } %>

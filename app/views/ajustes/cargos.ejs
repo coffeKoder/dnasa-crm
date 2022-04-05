@@ -1,0 +1,60 @@
+<%- include('../_templates/header.template.ejs') %>
+   <%- include('../_templates/navbar.template.ejs') %>
+      <%- include('../_templates/sidebar.template.ejs') %>
+         <%- include('../_templates/body_top.template.ejs') %>
+            <div class="app-title">
+               <div>
+                  <h1><i class="fab fa-uncharted"></i> Cargos <%= usr[0].usuario %></h1>
+                  <p>Administraci&oacute;n de Cargos Disponibles</p>
+               </div>
+               <ul class="app-breadcrumb breadcrumb">
+                  <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                  <li class="breadcrumb-item"><a href="#">Ajustes</a></li>
+                  <li class="breadcrumb-item"><i>Cargos</i></li>
+               </ul>
+            </div>
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="tile">
+                     <div class="tile-body">
+                        <table id="tbl-cargo" class="table table-hover table-sm">
+                           <thead>
+                              <tr>
+                                 <th scope="col">#</th>
+                                 <th scope="col">Cargos</th>
+                                 <th scope="col">Acciones</th>
+                              </tr>
+                           </thead>
+                           <tbody id="tbl-cargo-data">
+
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="tile">
+                     <div class="tile-body">
+                        <form method="POST">
+                           <div class="form-group">
+                              <input type="text" class="form-control" id="id" name="id" placeholder="id">
+                           </div>
+                           <div class="form-group">
+                              <label for="cargo">Cargos</label>
+                              <input type="text" name="cargo" class="form-control" id="cargo" required
+                                 placeholder="Cargos" autofocus>
+                           </div>
+                           <div class="form-group">
+                              <button class="btn btn-secondary btn-block" type="button" id="procesar"> <i
+                                    class="far fa-paper-plane"></i>
+                                 Procesar</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <%- include('../_templates/body_bottom.template.ejs') %>
+               <script src="/ajax/cargos.ajax.js"></script>
+               <%- include('../_templates/footer.template.ejs') %>

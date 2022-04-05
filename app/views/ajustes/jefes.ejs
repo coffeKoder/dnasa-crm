@@ -1,0 +1,64 @@
+<%- include('../_templates/header.template.ejs') %>
+   <%- include('../_templates/navbar.template.ejs') %>
+      <%- include('../_templates/sidebar.template.ejs') %>
+         <%- include('../_templates/body_top.template.ejs') %>
+            <div class="app-title">
+               <div>
+                  <h1><i class="fas fa-user-tie"></i> Jefes</h1>
+                  <p>Administraci&oacute;n de Jefes Disponibles</p>
+               </div>
+               <ul class="app-breadcrumb breadcrumb">
+                  <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                  <li class="breadcrumb-item"><a href="#">Ajustes</a></li>
+                  <li class="breadcrumb-item"><i>Jefes</i></li>
+               </ul>
+            </div>
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="tile">
+                     <div class="tile-body">
+                        <table class="table table-hover table-sm">
+                           <thead>
+                              <tr>
+                                 <th scope="col">#</th>
+                                 <th scope="col">Nombre</th>
+                                 <th scope="col">Usuario</th>
+                                 <th scope="col">Acciones</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="tile">
+                     <div class="tile-body">
+                        <form action="">
+                           <div class="form-group">
+                              <input type="text" class="form-control" id="id" name="id" placeholder="id">
+                           </div>
+                           <div class="form-group">
+                              <label for="jefe_nombre">Nombre Completo</label>
+                              <input type="text" name="jefe_nombre" class="form-control" id="jefe_nombre" required
+                                 placeholder="Nombre Jefe" autofocus>
+                           </div>
+                           <div class="form-group">
+                              <label for="usuario_jefe">Nombre de Usuario</label>
+                              <input type="text" name="usuario_jefe" class="form-control" id="usuario_jefe" required
+                                 placeholder="Nombre de Usuario">
+                           </div>
+                           <div class="form-group">
+                              <button class="btn btn-secondary btn-block"> <i class="far fa-paper-plane"></i>
+                                 Procesar</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <%- include('../_templates/body_bottom.template.ejs') %>
+               <%- include('../_templates/footer.template.ejs') %>
